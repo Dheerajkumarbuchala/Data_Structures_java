@@ -15,18 +15,18 @@ public class FrequenciesInSortedArray {
         frequency(arr);
     }
     public static void frequency(int [] arr){
-        int count = 1 , n = arr.length;
-        for(int i=1;i<n;i++){
-            if(arr[i-1]==arr[i]){
+        int count = 1 , n = arr.length,i = 1;
+        while(i < n) {
+            while (i < n && arr[i - 1] == arr[i]) {
                 count++;
+                i++;
             }
-            else{
-                System.out.println(arr[i-1] + " " + count);
-                count = 1;
-            }
+            System.out.println(arr[i - 1] + " " + count);
+            count = 1;
+            i++;
         }
-        if(n==1 || arr[n-2]!=arr[n-1]){
-            System.out.println(arr[n-1] + " " + 1);
+        if (n == 1 || arr[n - 2] != arr[n - 1]) {
+            System.out.println(arr[n - 1] + " " + 1);
         }
     }
 }
